@@ -2,19 +2,18 @@
 
 <img src="https://raw.githubusercontent.com/Devopstrio/.github/main/assets/Browser_logo.png" height="150" alt="Manufacturing Landing Zone Logo" />
 
-<h1>Manufacturing Landing Zone (IIoT) Platform</h1>
+<h1>Manufacturing Landing Zone</h1>
 
-<p><strong>The Institutional-Grade Platform for OT/IT Convergence, Edge-First Automation, and Deterministic IIoT Data Pipelines</strong></p>
+<p><strong>The Institutional-Grade Platform for OT/IT Convergence, Edge-First Automation, and Deterministic IIoT Data Pipelines.</strong></p>
 
-[![Standard: ISA-95](https://img.shields.io/badge/Standard-ISA--95-emerald.svg?style=for-the-badge&labelColor=000000)]()
-[![Status: Production--Ready](https://img.shields.io/badge/Status-Production--Ready-indigo.svg?style=for-the-badge&labelColor=000000)]()
-[![Architecture: Edge--First](https://img.shields.io/badge/Architecture-Edge--First-blue.svg?style=for-the-badge&labelColor=000000)]()
-[![Security: Zero--Trust--OT](https://img.shields.io/badge/Security-Zero--Trust--OT-gold.svg?style=for-the-badge&labelColor=000000)]()
+[![Standard: ISA-95-Excellence](https://img.shields.io/badge/Standard-ISA--95--Excellence-emerald.svg?style=for-the-badge&labelColor=000000)]()
+[![Status: Production--Ready](https://img.shields.io/badge/Status-Production--Ready-emerald.svg?style=for-the-badge&labelColor=000000)]()
+[![Focus: Industrial--Autonomy](https://img.shields.io/badge/Focus-Industrial--Autonomy-blue.svg?style=for-the-badge&labelColor=000000)]()
 
 <br/>
 
 > **"Unconnected factories are the blind spots of the modern industrial enterprise."** 
-> Manufacturing Landing Zone is a flagship solution for Industrial Architects, SREs, and OT Leaders. By orchestrating deterministic edge clusters, low-latency telemetry pipelines, and air-gap compatible synchronization, it enables organizations to bridge the gap between factory floor reality and cloud-scale intelligence.
+> **Manufacturing Landing Zone** is an enterprise-grade platform designed to provide a secure, measurable, and highly automated foundation for global industrial operations. It orchestrates the complex lifecycle of industrial data—from edge-first sensor ingestion and local processing to cloud-scale digital twin simulations and unified OT/IT governance.
 
 </div>
 
@@ -22,631 +21,263 @@
 
 ## 🏛️ Executive Summary
 
-The **Manufacturing Landing Zone Platform** is a specialized flagship solution designed for Industrial Organizations, Factory Owners, and IIoT Engineers. As Industry 4.0 accelerates, organizations face the massive challenge of converging legacy Operational Technology (OT) with modern Information Technology (IT) without compromising safety, security, or production uptime. This platform addresses the complexity of managing distributed factory assets—from PLCs to robotic arms—using a resilient, edge-first framework.
+Fragmented factory floor data and manual maintenance processes are strategic operational liabilities; lack of centralized industrial orchestration is a primary barrier to organizational Industry 4.0 scaling. Organizations fail to achieve rapid factory intelligence not because of a lack of sensors, but because of fragmented data standards, lack of automated edge processing, and an inability to orchestrate OT/IT convergence with operational precision.
 
-This platform provides a **Unified Industrial Intelligence Plane**. It demonstrates how to orchestrate institutional IIoT—using **FastAPI**, **React 18**, **k3s**, and **Kafka**—to create a "Data-Driven" factory culture. By providing **Deterministic Low-Latency Processing**, **Air-Gap Synchronization**, and **Predictive Maintenance Hooks**, it enables organizations to move from "Reactive Maintenance" to "Industrial Autonomy."
-
----
-
-## 📉 The "Industrial Fragmentation" Problem
-
-Enterprises scaling manufacturing operations face existential challenges:
-- **OT/IT Silos**: Deep technical and cultural divides between factory floor systems (proprietary, legacy, air-gapped) and corporate cloud environments, leading to "Intelligence Isolation."
-- **Latency Sensitivity**: Inability of centralized cloud systems to meet the <10ms response times required for real-time robotic coordination and safety systems.
-- **Connectivity Fragility**: High-risk dependency on persistent internet connectivity for factory operations, leading to catastrophic production halts during network outages.
-- **Security Vulnerability**: Legacy OT systems often lack modern security controls, making them prime targets for lateral movement and industrial espionage.
+This platform provides the **Industrial Intelligence Plane**. It implements a complete **Enterprise Manufacturing-as-Code Framework**, enabling Factory Engineering and Operations teams to manage global industrial assets as first-class citizens. By automating the ingestion of high-frequency sensor data and orchestrating real-time predictive maintenance, we ensure that every organizational asset—from robotic assembly lines to critical power systems—is monitored by default, audited for history, and strictly aligned with institutional ISA-95/IEC 62443 frameworks.
 
 ---
 
-## 🚀 Strategic Drivers & Business Outcomes
+## 📐 Architecture Storytelling: Principal Reference Models
 
-### 🎯 Strategic Drivers
-- **Edge-First Architecture**: Moving critical control logic and telemetry processing to the factory floor (via k3s) for maximum resilience and low latency.
-- **Deterministic Pipelines**: Ensuring predictable data processing times for real-time industrial orchestration.
-- **Zero Trust OT Security**: Implementing strict micro-segmentation and device identity models to protect the factory floor from IT-layer threats.
+### 1. Principal Architecture: Global Manufacturing Landing Zone & Industrial Intelligence Plane
+This diagram illustrates the end-to-end flow from edge sensor ingestion and local processing to cloud-scale digital twins, predictive maintenance, and institutional industrial auditing.
 
-### 💰 Business Outcomes
-- **Zero Downtime from Connectivity Loss**: Through offline-first edge buffering and autonomous factory floor operations.
-- **30% Reduction in Maintenance Costs**: By utilizing real-time telemetry for predictive failure modeling and digital twin simulations.
-- **Institutional Compliance**: Ensuring adherence to ISA-95 and IEC 62443 standards through automated policy enforcement and audit trails.
+```mermaid
+graph LR
+    %% Subgraph Definitions
+    subgraph FactoryFloor["Factory Floor (OT Ingress)"]
+        direction TB
+        Sensors["Industrial Sensors (MQTT/OPC-UA)"]
+        PLCs["Programmable Logic Controllers"]
+        Robots["Robotic Assembly Units"]
+    end
+
+    subgraph IntelligenceEngine["Industrial Intelligence Hub"]
+        direction TB
+        API["FastAPI Industrial Gateway"]
+        EdgeManager["Distributed Edge Orchestrator"]
+        TwinHub["Digital Twin Simulation Hub"]
+        Predictor["Predictive Maintenance Engine"]
+    end
+
+    subgraph ExecutionPlane["Distributed Edge Fleet (k3s)"]
+        direction TB
+        LocalNodes["Deterministic Edge Clusters"]
+        OfflineBuffers["Secure Message Buffers"]
+        SyncWorkers["Cloud-Edge Sync Workers"]
+    end
+
+    subgraph OperationsHub["Institutional Industrial Hub"]
+        direction TB
+        Scorecard["Factory Maturity Score"]
+        Analytics["OEE & Production Stats"]
+        Audit["Forensic Industrial Metadata Lake"]
+    end
+
+    subgraph DevOps["Manufacturing-as-Code Orchestration"]
+        direction TB
+        TF["Terraform Industrial Modules"]
+        SecPolicy["OT/IT Segmentation Policy"]
+        ChatOps["Command Approval Hub"]
+    end
+
+    %% Flow Arrows
+    FactoryFloor -->|1. Stream Telemetry| API
+    API -->|2. Register Device| EdgeManager
+    EdgeManager -->|3. Deploy Logic| ExecutionPlane
+    ExecutionPlane -->|4. Sync Asset State| TwinHub
+    
+    TwinHub -->|5. Predict Failure| Predictor
+    Predictor -->|6. Notify Command| ChatOps
+    API -->|7. Visualize Health| Scorecard
+    
+    Scorecard -->|8. Track OEE| Analytics
+    Scorecard -->|9. Record Event| Audit
+    
+    TF -->|10. Provision Hub| IntelligenceEngine
+    SecPolicy -->|11. Enforce Segmentation| ExecutionPlane
+    Audit -->|12. Improve Models| Predictor
+
+    %% Styling
+    classDef ingress fill:#f5f5f5,stroke:#616161,stroke-width:2px;
+    classDef intel fill:#e8f5e9,stroke:#2e7d32,stroke-width:2px;
+    classDef execution fill:#e1f5fe,stroke:#01579b,stroke-width:2px;
+    classDef ops fill:#ede7f6,stroke:#311b92,stroke-width:2px;
+    classDef devops fill:#fffde7,stroke:#f57f17,stroke-width:2px;
+
+    class FactoryFloor ingress;
+    class IntelligenceEngine intel;
+    class ExecutionPlane execution;
+    class OperationsHub ops;
+    class DevOps devops;
+```
+
+### 2. The Industrial Data Lifecycle Flow
+The continuous path of an industrial signal from initial edge ingestion and processing to active simulation, actuation, and institutional forensic auditing.
+
+```mermaid
+graph LR
+    Ingest["Ingest IoT"] --> Store["Store Edge"]
+    Store --> Analyze["Analyze Cloud"]
+    Analyze --> Actuate["Actuate Factory"]
+    Actuate --> Audit["Forensic Audit"]
+```
+
+### 3. IIoT Edge & Factory Connectivity Topology
+Strategically connecting PLC and SCADA systems through unified institutional gateways (OPC-UA/MQTT), providing a single point of entry for secure factory-to-cloud communication.
+
+```mermaid
+graph LR
+    Hub["Unified IIoT Gateway"] -->|Connect| PLC["Siemens / Allen-Bradley PLCs"]
+    Hub -->|Connect| SCADA["Factory SCADA Systems"]
+    Hub -->|Connect| Sensors["Wireless IoT Sensors"]
+    Hub --- Logic["Deterministic Local Logic"]
+```
+
+### 4. Distributed Edge Computing & Local Processing Flow
+Executing critical low-latency control logic and data normalization on-site (at the factory edge) before cloud egress, ensuring production continuity even during internet outages.
+
+```mermaid
+graph TD
+    Sensor["Sensor Input"] --> Edge["Local k3s Processor"]
+    Edge -->|Action| Robot["Robotic Response (<10ms)"]
+    Edge -->|Normal| Buffer["Secure Uplink Buffer"]
+    Buffer --- Cloud["Cloud Aggregator"]
+```
+
+### 5. Digital Twin & Asset Simulation Flow
+Mirroring physical factory assets in a virtual cloud environment, enabling real-time state tracking and high-fidelity "what-if" simulations for production optimization.
+
+```mermaid
+graph LR
+    Real["Physical Asset"] --> Sync["State Sync Engine"]
+    Sync --> Twin["Virtual Digital Twin"]
+    Twin --> Sim["Optimization Simulation"]
+    Sim --- UI["Factory Control Center"]
+```
+
+### 6. Predictive Maintenance & Quality Control Flow
+Identifying potential equipment failures or product defects using advanced ML models, triggering automated maintenance requests before production is impacted.
+
+```mermaid
+graph LR
+    Telemetry["Asset Telemetry"] --> Model["Failure Prediction Model"]
+    Model -->|Anomaly| Request["Maintenance Ticket"]
+    Model -->|Pass| Stats["Quality Assurance Hub"]
+    Request --- Inventory["Spare Parts Tracker"]
+```
+
+### 7. Institutional Manufacturing Maturity Scorecard
+Grading organizational performance based on key indicators: Factory Uptime, OEE (Overall Equipment Effectiveness), and Industrial Safety Metrics.
+
+```mermaid
+graph TD
+    Post["Maturity Health: 94%"] --> Risk["OEE Gap: 6%"]
+    Post --- C1["Factory Uptime (99%)"]
+    Post --- C2["Safety Compliance (100%)"]
+```
+
+### 8. Identity & RBAC for Industrial Governance
+Managing fine-grained access to factory control channels, asset state, and audit logs between Factory Managers, Maintenance Engineers, and Data Scientists.
+
+```mermaid
+graph TD
+    Manager["Factory Manager"] --> Hub["Observe Site Performance"]
+    Engineer["Maintenance Engineer"] --> Control["Execute Manual Actuation"]
+    Scientist["Data Scientist"] --> Audit["Analyze Historical Data"]
+```
+
+### 9. IaC Deployment: Manufacturing-LZ-as-Code Framework
+Using modular Terraform to deploy and manage the versioned distribution of the industrial tracking hubs, edge clusters, and forensic metadata lakes.
+
+```mermaid
+graph LR
+    HCL["Infrastructure Code"] --> TF["Terraform Apply"]
+    TF --> Engine["Industrial Control Plane"]
+    Engine --> Clusters["HA Edge Fleet"]
+```
+
+### 10. AIOps Factory Health & Anomaly Validation Flow
+Using advanced analytics to identify anomalous sensor readings or hidden production bottlenecks, identifying potential equipment stress before it results in a halt.
+
+```mermaid
+graph LR
+    Sensors["Sensor Streams"] --> Analyzer["Anomaly Detection Bot"]
+    Analyzer -->|Anomalous| Alert["Factory Stress Alert"]
+    Analyzer -->|Normal| Pass["Status Operational"]
+```
+
+### 11. Metadata Lake for Forensic Industrial Audit
+Storing long-term records of every sensor reading, maintenance event, and safety alert for institutional record-keeping, compliance auditing, and post-incident forensics.
+
+```mermaid
+graph LR
+    Sensor["Sensor Event"] --> Stream["Forensic Stream"]
+    Stream --> Lake["Industrial Metadata Lake"]
+    Lake --> Trends["Production Efficiency Trends"]
+```
 
 ---
 
-## 📐 Architecture Storytelling: 80+ Advanced Diagrams
-
-### 1. Executive Industrial Architecture
-*The orchestration of Factory Floor, Edge Aggregator, and Cloud Intelligence.*
-```mermaid
-graph TD
-    subgraph "Cloud Layer (Intelligence)"
-        Portal[Industrial Hub]
-        Analytics[Global Analytics]
-        Control[Command Center]
-    end
-
-    subgraph "Edge Layer (Factory Aggregator)"
-        Kafka[Kafka Bridge]
-        Sync[Sync Engine]
-        DB[Time-Series Cache]
-    end
-
-    subgraph "OT Layer (Factory Floor)"
-        k3s[Edge k3s Clusters]
-        PLC[PLCs / Sensors]
-        Robot[Robotic Arms]
-    end
-
-    PLC --> k3s
-    Robot --> k3s
-    k3s --> Kafka
-    Kafka --> Sync
-    Sync --> Analytics
-    Analytics --> Portal
-    Control --> Sync
-    Sync --> k3s
-```
-
-### 2. Deterministic IIoT Data Pipeline
-*From sensor event to global insight.*
-```mermaid
-sequenceDiagram
-    participant Sensor as Industrial Sensor
-    participant Edge as Edge Processor (k3s)
-    participant Kafka as Kafka Bridge
-    participant Cloud as Cloud Analytics
-    participant Twin as Digital Twin Hub
-
-    Sensor->>Edge: Telemetry Event (<1ms)
-    Edge->>Edge: Local Deterministic Processing
-    Edge->>Kafka: Push to Offline Buffer
-    Kafka->>Kafka: Buffering during Disconnect
-    Kafka->>Cloud: Sync when Uplink Restored
-    Cloud->>Twin: Update Asset State
-    Cloud->>Analytics: Trigger Predictive Logic
-```
-
-### 3. OT/IT Zero Trust Segmentation
-*Securing the factory floor via the "Purdue Model" adaptation.*
-```mermaid
-graph TD
-    subgraph "Level 4/5: Corporate IT"
-        App[ERP / Analytics]
-    end
-    subgraph "Level 3.5: Industrial DMZ"
-        GW[Security Gateway]
-        Proxy[Uplink Proxy]
-    end
-    subgraph "Level 0-3: Factory OT"
-        PLC[Control Systems]
-        HMI[Operator Panels]
-    end
-
-    App --> GW
-    GW --> Proxy
-    Proxy --> PLC
-    Proxy --> HMI
-```
-
-### 4. Air-Gap Synchronization Model
-```mermaid
-graph LR
-    Factory[Air-Gapped Factory] --> Buffer[Secure Edge Buffer]
-    Buffer --> Media[Periodic Data Transfer / Uplink]
-    Media --> Cloud[Cloud Ingestion]
-    Note right of Media: Deterministic Sync Windows
-```
-
-### 5. Device Onboarding & Identity Flow
-```mermaid
-graph LR
-    Device[New Device] --> Cert[Device Certificate Check]
-    Cert --> Enroll[Enroll in Registry]
-    Enroll --> Policy[Apply Zone Policy]
-    Policy --> Data[Start Telemetry Flow]
-```
-
-### 6. Predictive Maintenance Loop
-```mermaid
-graph TD
-    Data[Telemetry Stream] --> ML[Anomaly Detection]
-    ML --> Score[Health Score < 30%]
-    Score --> Action[Trigger Maintenance Request]
-    Action --> Parts[Order Spare Parts]
-```
-
-### 7. Multi-Site Industrial Topology
-```mermaid
-graph TD
-    Cloud[Global Command] --> S1[Site: Detroit]
-    Cloud --> S2[Site: Munich]
-    Cloud --> S3[Site: Shanghai]
-    S1 --> Edge1[Factory Edge]
-    S2 --> Edge2[Factory Edge]
-    S3 --> Edge3[Factory Edge]
-```
-
-### 8. Edge Failover Cluster Logic
-```mermaid
-graph LR
-    Master[Node 1: Active] --> Heartbeat[Heartbeat Check]
-    Heartbeat --> Fail{Fail?}
-    Fail -->|Yes| Slave[Node 2: Takeover]
-    Slave --> Control[Continue Production]
-```
-
-### 9. Protocol Abstraction Layer (PAL)
-```mermaid
-graph LR
-    PLC[Siemens S7] --> Adapt[Modbus/OPC Adapter]
-    Robot[Kuka] --> Adapt
-    Adapt --> Unified[Unified IIoT JSON]
-```
-
-### 10. Digital Twin State Update
-```mermaid
-graph LR
-    Real[Physical Asset] --> Telemetry[Telemetry Stream]
-    Telemetry --> Twin[Digital Twin Entity]
-    Twin --> Sim[Simulation / What-if]
-```
-
-### 11. OT/IT convergence flow
-```mermaid
-graph LR
-    O[OT] --> C[Conv]
-```
-
-### 12. Industrial IoT pipeline
-```mermaid
-graph LR
-    I[IIoT] --> P[Pipe]
-```
-
-### 13. Edge-first architecture
-```mermaid
-graph LR
-    E[Edge] --> A[Arch]
-```
-
-### 14. Deterministic processing flow
-```mermaid
-graph LR
-    D[Dete] --> P[Proc]
-```
-
-### 15. Air-gapped environment mode
-```mermaid
-graph LR
-    A[Air] --> E[Envi]
-```
-
-### 16. Secure device onboarding
-```mermaid
-graph LR
-    S[Secu] --> D[Devi]
-```
-
-### 17. Real-time telemetry flow
-```mermaid
-graph LR
-    R[Real] --> T[Tele]
-```
-
-### 18. Predictive maintenance hook
-```mermaid
-graph LR
-    P[Pred] --> M[Main]
-```
-
-### 19. Digital twin abstraction
-```mermaid
-graph LR
-    D[Digi] --> T[Twin]
-```
-
-### 20. Multi-factory orchestration
-```mermaid
-graph LR
-    M[Mult] --> F[Fact]
-```
-
-### 21. Secure firmware update
-```mermaid
-graph LR
-    S[Secu] --> F[Firm]
-```
-
-### 22. OPC-UA abstraction layer
-```mermaid
-graph LR
-    O[OPCU] --> A[Abst]
-```
-
-### 23. Modbus adapter flow
-```mermaid
-graph LR
-    M[Modb] --> A[Adap]
-```
-
-### 24. Edge failover cluster
-```mermaid
-graph LR
-    E[Edge] --> F[Fail]
-```
-
-### 25. Data prioritization flow
-```mermaid
-graph LR
-    D[Data] --> P[Prio]
-```
-
-### 26. Factory isolation model
-```mermaid
-graph LR
-    F[Fact] --> I[Isol]
-```
-
-### 27. Multi-site synchronization
-```mermaid
-graph LR
-    M[Mult] --> S[Sync]
-```
-
-### 28. OT anomaly detection
-```mermaid
-graph LR
-    O[OT] --> A[Anom]
-```
-
-### 29. Secure command channel
-```mermaid
-graph LR
-    S[Secu] --> C[Comm]
-```
-
-### 30. Ingestion engine flow
-```mermaid
-graph LR
-    I[Inge] --> E[Engi]
-```
-
-### 31. Edge engine logic
-```mermaid
-graph LR
-    E[Edge] --> E[Engi]
-```
-
-### 32. Analytics engine flow
-```mermaid
-graph LR
-    A[Anal] --> E[Engi]
-```
-
-### 33. Security engine flow
-```mermaid
-graph LR
-    S[Secu] --> E[Engi]
-```
-
-### 34. Device identity flow
-```mermaid
-graph LR
-    D[Devi] --> I[Iden]
-```
-
-### 35. Telemetry ingestion loop
-```mermaid
-graph LR
-    T[Tele] --> I[Inge]
-```
-
-### 36. Edge buffering flow
-```mermaid
-graph LR
-    E[Edge] --> B[Buff]
-```
-
-### 37. Edge sync engine
-```mermaid
-graph LR
-    E[Edge] --> S[Sync]
-```
-
-### 38. Batch pipeline flow
-```mermaid
-graph LR
-    B[Batc] --> P[Pipe]
-```
-
-### 39. Protocol adapter logic
-```mermaid
-graph LR
-    P[Prot] --> A[Adap]
-```
-
-### 40. OT segmentation policy
-```mermaid
-graph LR
-    O[OT] --> S[Segm]
-```
-
-### 41. Zero trust model
-```mermaid
-graph LR
-    Z[Zero] --> T[Trus]
-```
-
-### 42. Compliance policy flow
-```mermaid
-graph LR
-    C[Comp] --> P[Poli]
-```
-
-### 43. Infrastructure: Network
-```mermaid
-graph LR
-    I[Infr] --> N[Netw]
-```
-
-### 44. Infrastructure: Edge cluster
-```mermaid
-graph LR
-    I[Infr] --> E[Edge]
-```
-
-### 45. Infrastructure: Kafka
-```mermaid
-graph LR
-    I[Infr] --> K[Kafk]
-```
-
-### 46. Monitoring: Prometheus
-```mermaid
-graph LR
-    M[Moni] --> P[Prom]
-```
-
-### 47. Monitoring: Grafana
-```mermaid
-graph LR
-    M[Moni] --> G[Graf]
-```
-
-### 48. Monitoring: Alerts
-```mermaid
-graph LR
-    M[Moni] --> A[Aler]
-```
-
-### 49. CI/CD: Build pipeline
-```mermaid
-graph LR
-    C[CICD] --> B[Buil]
-```
-
-### 50. CI/CD: Test pipeline
-```mermaid
-graph LR
-    C[CICD] --> T[Test]
-```
-
-### 51. CI/CD: Deploy pipeline
-```mermaid
-graph LR
-    C[CICD] --> D[Depl]
-```
-
-### 52. Mfg UI: Dashboard
-```mermaid
-graph LR
-    U[UI] --> D[Dash]
-```
-
-### 53. Mfg UI: Device registry
-```mermaid
-graph LR
-    U[UI] --> D[Devi]
-```
-
-### 54. Mfg UI: Edge nodes
-```mermaid
-graph LR
-    U[UI] --> E[Edge]
-```
-
-### 55. Mfg UI: Telemetry
-```mermaid
-graph LR
-    U[UI] --> T[Tele]
-```
-
-### 56. API: Device list
-```mermaid
-graph LR
-    A[API] --> D[Devi]
-```
-
-### 57. API: Telemetry ingest
-```mermaid
-graph LR
-    A[API] --> T[Tele]
-```
-
-### 58. API: Analytics fetch
-```mermaid
-graph LR
-    A[API] --> A[Anal]
-```
-
-### 59. API: Edge status
-```mermaid
-graph LR
-    A[API] --> E[Edge]
-```
-
-### 60. Worker: Edge ingest
-```mermaid
-graph LR
-    W[Work] --> E[Edge]
-```
-
-### 61. Worker: Stream proc
-```mermaid
-graph LR
-    W[Work] --> S[Stre]
-```
-
-### 62. Worker: Sync engine
-```mermaid
-graph LR
-    W[Work] --> S[Sync]
-```
-
-### 63. Worker: Analytics engine
-```mermaid
-graph LR
-    W[Work] --> A[Anal]
-```
-
-### 64. Worker: Security monitor
-```mermaid
-graph LR
-    W[Work] --> S[Secu]
-```
-
-### 65. Offline mode flow
-```mermaid
-graph LR
-    O[Offl] --> M[Mode]
-```
-
-### 66. Data sync integrity
-```mermaid
-graph LR
-    D[Data] --> S[Sync]
-```
-
-### 67. Firmware rollout sequence
-```mermaid
-graph LR
-    F[Firm] --> R[Roll]
-```
-
-### 68. Factory isolation check
-```mermaid
-graph LR
-    F[Fact] --> I[Isol]
-```
-
-### 69. Site failover sequence
-```mermaid
-graph LR
-    S[Site] --> F[Fail]
-```
-
-### 70. Asset lifecycle model
-```mermaid
-graph LR
-    A[Asse] --> L[Life]
-```
-
-### 71. Quality control loop
-```mermaid
-graph LR
-    Q[Qual] --> C[Cont]
-```
-
-### 72. Supply chain integration
-```mermaid
-graph LR
-    S[Supp] --> I[Inte]
-```
-
-### 73. Transformation roadmap
-```mermaid
-graph LR
-    T[Tran] --> R[Road]
-```
-
-### 74. Value realization model
-```mermaid
-graph LR
-    V[Valu] --> R[Real]
-```
-
-### 75. Institutional maturity
-```mermaid
-graph LR
-    I[Inst] --> M[Matu]
-```
-
-### 76. Evidence collection flow
-```mermaid
-graph LR
-    E[Evid] --> C[Coll]
-```
-
-### 77. Compliance audit trail
-```mermaid
-graph LR
-    C[Comp] --> A[Audi]
-```
-
-### 78. Strategy execution loop
-```mermaid
-graph LR
-    S[Stra] --> E[Exec]
-```
-
-### 79. Industrial ecosystem
-```mermaid
-graph LR
-    I[Indu] --> E[Ecos]
-```
-
-### 80. Manufacturing blueprint
-```mermaid
-graph LR
-    M[Manf] --> B[Blue]
-```
+## 🏛️ Core Manufacturing Pillars
+
+1.  **Deterministic Edge Intelligence**: Maximizing response speed and reliability through local, low-latency processing.
+2.  **High-Fidelity Digital Twins**: Ensuring real-time synchronization between physical assets and virtual models.
+3.  **Autonomous Production Resiliency**: Guaranteeing factory uptime during cloud connectivity disruptions through edge buffering.
+4.  **Zero-Trust OT/IT Segmentation**: Protecting critical factory floor assets through strict micro-segmentation and device identity.
+5.  **Predictive Operational Excellence**: Eliminating unplanned downtime through continuous machine-learning-driven monitoring.
+6.  **Full Industrial Auditability**: Immutable recording of every sensor reading and control decision for institutional forensics.
 
 ---
 
 ## 🛠️ Technical Stack & Implementation
 
-### Edge & IIoT Processing
-- **Edge Runtime**: k3s (Lightweight K8s) on industrial gateway hardware.
-- **Processing**: Python (FastAPI/Workers) for deterministic edge logic and Modbus/OPC-UA adapters.
-- **Streaming**: Kafka (MSK/Local) for multi-site synchronization and buffering.
+### Industrial Engine & APIs
+*   **Framework**: Python 3.11+ / FastAPI.
+*   **Edge Runtime**: k3s (Lightweight Kubernetes) for deterministic factory logic.
+*   **Messaging Core**: Kafka (MSK) with local edge buffering capabilities.
+*   **Persistence**: PostgreSQL (Metadata Lake) and Redis (Live State Cache).
+*   **Auth Orchestrator**: Federated OIDC/SAML for least-privilege industrial asset access.
 
-### Frontend (Industrial Control Hub)
-- **Framework**: React 18 / Vite
-- **Visuals**: Recharts (Telemetry Throughput, Asset Health, Sync Integrity).
-- **Theme**: Dark, Slate, and Emerald (Institutional Industrial Aesthetics).
+### Control Hub (UI)
+*   **Framework**: React 18 / Vite.
+*   **Theme**: Dark, Slate, Emerald (Modern high-fidelity industrial aesthetic).
+*   **Visualization**: D3.js for asset topology and Recharts for OEE and telemetry analytics.
 
-### Infrastructure
-- **Cloud**: AWS EKS (Aggregator), MSK (Kafka), EMR (Spark).
-- **IaC**: Terraform (VPC, Edge Cluster, Kafka, IAM).
+### Infrastructure & DevOps
+*   **Runtime**: AWS EKS (Cloud Aggregator) and local industrial gateway hardware (Edge).
+*   **Security Plane**: Managed segmentation via AWS PrivateLink and industrial firewalls.
+*   **IaC**: Modular Terraform for deploying the manufacturing landing zone and edge fleet.
+
+---
+
+## 🏗️ IaC Mapping (Module Structure)
+
+| Module | Purpose | Real Services |
+| :--- | :--- | :--- |
+| **`infrastructure/mfg_hub`** | Central management plane | EKS, PostgreSQL, Redis |
+| **`infrastructure/edge_nodes`** | Factory floor clusters | k3s, Industrial Gateways |
+| **`infrastructure/connectivity`** | Secure OT/IT Bridge | Site-to-Site VPN, PrivateLink |
+| **`infrastructure/auditing`** | Forensic industrial sinks | S3, Athena, Quicksight |
 
 ---
 
 ## 🚀 Deployment Guide
 
-### Local Development
+### Local Principal Environment
 ```bash
-# Clone the repository
+# Clone the manufacturing platform
 git clone https://github.com/devopstrio/manufacturing-lz.git
 cd manufacturing-lz
 
-# Setup environment
+# Configure environment
 cp .env.example .env
 
-# Launch services
-make up
+# Launch the Manufacturing stack
+make init
+
+# Trigger a mock sensor ingestion and predictive maintenance simulation
+make simulate-industrial
 ```
+
 Access the Industrial Control Hub at `http://localhost:3000`.
 
 ---
 
 ## 📜 License
 Distributed under the MIT License. See `LICENSE` for more information.
+
+---
+<div align="center">
+  <p>© 2026 Devopstrio. All rights reserved.</p>
+</div>
